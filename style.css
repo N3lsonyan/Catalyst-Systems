@@ -1,0 +1,641 @@
+/* Theme 1: Modern Dark Theme (Framer-Inspired) */
+:root {
+    /* Deep Space Dark Theme (Softer, richer blacks/purples) */
+    --main-bg: #09090b; /* Near-black for deep contrast */
+    --secondary-bg: #18181b; /* Slightly lighter background for sections */
+    --tertiary-bg: #27272a; /* Card background - subtle lift */
+    
+    --light-text: #f4f4f5; /* Near-white for primary text */
+    --secondary-text: #a1a1aa; /* Soft gray for muted text */
+    
+    --accent-color: #6366f1; /* Electric Purple/Indigo for primary accent */
+    --success-color: #22c55e; /* Vibrant Green for CTA (Success) */
+    
+    --dark-border: #3f3f46; /* Subtle border for separation */
+    --white: #ffffff;
+}
+
+
+/* Global Styles */
+body {
+    /* Prioritize a clean, modern font stack */
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-bg); /* Deepest Dark Background */
+    color: var(--light-text); /* Primary Text Color */
+    line-height: 1.6; /* Slightly increased line height for better readability */
+    font-size: 16px; /* Increased base font size for modern feel */
+}
+
+.container {
+    max-width: 1200px; /* Wider container for more space */
+    margin: 0 auto;
+    padding: 0 24px; /* Increased side padding */
+}
+
+h2, h3, h4 {
+    color: var(--light-text);
+    text-align: center;
+    margin-bottom: 24px; /* Increased spacing */
+    font-weight: 700; /* Bolder headings */
+}
+
+/* Header (The Sticky Nav Bar) */
+.main-header {
+    background: var(--main-bg); /* Use deepest dark for header for seamless top */
+    padding: 14px 0; /* Slightly thicker header */
+    border-bottom: 1px solid var(--dark-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin: 0;
+    font-size: 1.6em; /* Larger, bolder logo */
+    font-weight: 800;
+    color: var(--light-text); 
+}
+
+/* Navigation Links */
+nav a {
+    color: var(--secondary-text); /* Muted link color */
+    text-decoration: none;
+    margin-left: 30px; /* Increased spacing */
+    font-weight: 500;
+    transition: color 0.2s, transform 0.2s;
+}
+
+nav a:hover {
+    color: var(--accent-color); /* Accent color hover for vibrancy */
+    text-decoration: none;
+    transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+/* CTA Button - PRIMARY ACTION (Vibrant Pill Shape) */
+.cta-button, #submit-button {
+    display: inline-block;
+    background: var(--accent-color); /* Use primary accent for CTA */
+    color: var(--light-text); /* Light text on accent background */
+    padding: 8px 24px; /* More padding for a bolder button */
+    text-decoration: none;
+    border-radius: 9999px; /* Pill shape */
+    font-size: 16px; 
+    font-weight: 600;
+    transition: background 0.2s, transform 0.2s;
+    border: 1px solid transparent; 
+    cursor: pointer;
+    line-height: 20px;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2); /* Subtle shadow for lift */
+}
+
+.cta-button:hover, #submit-button:hover {
+    background: #4f46e5; /* Slightly darker indigo on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(99, 102, 241, 0.3);
+}
+
+/* Secondary Button (Used for "See More Case Studies" in Projects section) */
+.secondary-button {
+    display: inline-block;
+    background: var(--tertiary-bg);
+    color: var(--light-text);
+    padding: 8px 24px;
+    text-decoration: none;
+    border-radius: 9999px;
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid var(--dark-border);
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    cursor: pointer;
+    line-height: 20px;
+}
+
+.secondary-button:hover {
+    background: #3f3f46; /* Darker tertiary background on hover */
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+
+/* HERO SECTION */
+.hero-section {
+    background: var(--main-bg); 
+    padding: 120px 0; /* More vertical space */
+    text-align: center;
+}
+
+.hero-section h2 {
+    font-size: 3.5em; /* Larger, more impactful heading */
+    color: var(--light-text); 
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.hero-section p {
+    font-size: 1.25em; /* Larger sub-text */
+    max-width: 600px;
+    margin: 20px auto 40px auto;
+    color: var(--secondary-text); 
+}
+
+/* SERVICES & PROJECTS SECTIONS (High contrast sections) */
+.services-section {
+    padding: 100px 0; /* More vertical space */
+    background-color: var(--secondary-bg); /* Medium dark background */
+    border-top: 1px solid var(--dark-border);
+}
+
+.projects-section {
+    padding: 100px 0; /* More vertical space */
+    background-color: var(--main-bg); /* Deep dark background */
+}
+
+/* Cards (Service Items & Project Items) */
+.service-grid, .project-grid {
+    display: flex;
+    justify-content: center; /* Center content */
+    gap: 30px; /* Increased gap */
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.service-item, .project-item {
+    flex: 1 1 320px; 
+    padding: 30px; /* Increased padding */
+    border: 1px solid var(--dark-border);
+    border-radius: 12px; /* Smoother corners */
+    background: var(--tertiary-bg); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Soft, subtle shadow */
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    text-align: left;
+}
+
+.service-item:hover, .project-item:hover {
+    border-color: var(--accent-color); 
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.2);
+    transform: translateY(-5px); /* Subtle lift on hover */
+}
+
+.service-item h4 {
+    color: var(--accent-color); 
+    text-align: left;
+    margin-top: 0;
+    font-size: 1.4em; /* Larger title */
+    font-weight: 600;
+}
+
+.project-item h4 {
+    color: var(--light-text); 
+    text-align: left;
+    margin-top: 0;
+    font-size: 1.4em; 
+    font-weight: 600;
+}
+
+.project-item p {
+    color: var(--secondary-text); 
+}
+
+/* Team Grid Specific Styles */
+.team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    flex: 0 1 450px;
+    padding: 30px;
+    border: 1px solid var(--dark-border);
+    border-radius: 12px;
+    background: var(--tertiary-bg);
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.team-member img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover; 
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 4px solid var(--accent-color);
+    box-shadow: 0 0 0 4px var(--tertiary-bg); /* Ring effect */
+    display: inline-block;
+}
+
+.team-member h4 {
+    margin: 5px 0 5px 0;
+    font-size: 1.6em;
+    text-align: center;
+    font-weight: 700;
+}
+
+.team-member .title {
+    display: block;
+    color: var(--accent-color); /* Title in accent color */
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom: 15px;
+    font-size: 1em;
+}
+
+.team-member p {
+    text-align: left;
+    color: var(--secondary-text);
+    font-size: 1em;
+}
+
+/* ==================================== */
+/* 4. Pricing Section Styles            */
+/* ==================================== */
+
+.pricing-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.pricing-section h3 {
+    margin-bottom: 25px;
+}
+
+.pricing-section h4 {
+    color: var(--light-text);
+}
+
+.pricing-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.price-card {
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--dark-border);
+    border-radius: 12px;
+    padding: 40px 30px; /* More padding */
+    width: 320px; 
+    max-width: 100%;
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.price-card:hover {
+    transform: translateY(-8px); /* Deeper lift on hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent-color); 
+}
+
+.price-card.featured-card {
+    border: 3px solid var(--accent-color); /* Thicker border */
+    background-color: var(--tertiary-bg); /* Use card color for feature */
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.5); /* Stronger glow */
+}
+
+.price-card h4 {
+    font-size: 1.6rem;
+    margin-top: 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--dark-border);
+    text-align: left;
+}
+
+.price-card .price {
+    font-size: 3rem; /* Larger price tag */
+    color: var(--success-color); 
+    margin: 20px 0 25px 0;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.price-card .price .rate-unit {
+    font-size: 1rem;
+    color: var(--secondary-text);
+    display: block;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.price-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+}
+
+.price-card ul li {
+    margin-bottom: 12px;
+    color: var(--light-text); /* Features are light text */
+    font-size: 1rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.price-card ul li::before {
+    content: "→"; /* Modern arrow instead of checkmark */
+    color: var(--success-color); /* Checkmark color is success green */
+    margin-right: 12px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.price-card .cta-button {
+    width: 80%;
+    text-align: center;
+    margin-top: 25px;
+}
+.price-card .secondary-button { /* To match the secondary button style in pricing cards */
+    background: var(--tertiary-bg);
+    color: var(--light-text);
+    border-color: var(--dark-border);
+}
+
+
+/* ==================================== */
+/* 5. Testimonials Modal Styles (NEW)   */
+/* ==================================== */
+
+/* Modal Backdrop */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 2000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.9); /* Darker backdrop */
+    backdrop-filter: blur(8px); /* Stronger blur */
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: var(--secondary-bg);
+    margin: 8% auto; /* Center vertically and horizontally */
+    padding: 30px;
+    border: 1px solid var(--dark-border);
+    border-radius: 12px;
+    width: 90%; 
+    max-width: 1100px; /* Wider */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+    transform: scale(0.9); /* More pronounced scaling */
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease-out; /* Custom spring transition */
+}
+
+/* Show state for the modal (toggled by JS) */
+.modal.is-open {
+    display: block;
+}
+
+.modal.is-open .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Header and Close Button */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--dark-border);
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+}
+
+.modal-header .close-button {
+    font-size: 1.1rem;
+    padding: 6px 15px;
+    font-weight: 500;
+    line-height: 1;
+    border-radius: 9999px; /* Pill shape for close */
+}
+
+/* Body (The Testimonial Cards themselves) - Reusing .project-grid for layout */
+.modal-body {
+    padding: 0;
+    margin: 0;
+}
+
+/* Styling for testimonial cards inside the modal */
+.testimonial-card {
+    background: var(--tertiary-bg); /* Use card background */
+    border: 1px solid var(--dark-border);
+    padding: 30px;
+}
+
+.testimonial-card h4 {
+    /* Style the client name */
+    text-align: left;
+    color: var(--light-text); /* Client name is primary text */
+    margin-bottom: 5px;
+    margin-top: 0;
+}
+
+.testimonial-card .quote {
+    /* Style the quote for prominence */
+    font-style: normal; /* Remove italics for modern quotes */
+    font-weight: 500;
+    color: var(--secondary-text);
+    margin: 10px 0;
+    font-size: 1.15em;
+    line-height: 1.7;
+    position: relative;
+    padding-left: 20px;
+}
+.testimonial-card .quote::before {
+    content: "“";
+    position: absolute;
+    left: 0;
+    top: -5px;
+    font-size: 3em;
+    line-height: 1;
+    color: var(--accent-color);
+    opacity: 0.3;
+}
+
+
+.testimonial-card .client-title {
+    /* Style the client title/job */
+    display: block;
+    color: var(--accent-color); /* Title in accent color */
+    font-size: 0.9em;
+    font-style: normal;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+/* CONTACT SECTION (Form Styling) */
+.contact-section {
+    background: var(--secondary-bg); 
+    color: var(--light-text);
+    padding: 100px 0;
+    border-top: 1px solid var(--dark-border);
+}
+
+#contact-form {
+    max-width: 600px; /* Wider form */
+    margin: 40px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+    padding: 12px 16px; /* Increased padding */
+    border: 1px solid var(--dark-border);
+    border-radius: 8px; /* Slightly more rounded */
+    font-size: 16px;
+    background-color: var(--main-bg); 
+    color: var(--light-text);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+#contact-form input[type="text"]:focus,
+#contact-form input[type="email"]:focus,
+#contact-form textarea:focus {
+    border-color: var(--accent-color); 
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.3); /* Accent glow on focus */
+    background-color: var(--tertiary-bg);
+}
+
+
+#contact-form textarea {
+    resize: vertical;
+}
+
+.status-message {
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.status-message.success {
+    /* Success message style */
+    background-color: var(--success-color);
+    color: var(--main-bg); 
+}
+
+/* Footer */
+footer {
+    background: var(--main-bg); 
+    color: var(--secondary-text);
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9em;
+    border-top: 1px solid var(--dark-border);
+}
+
+/* --- MOBILE RESPONSIVENESS (JavaScript Controlled) --- */
+
+/* Mobile Menu Toggle Button (Initially hidden on desktop) */
+.menu-toggle-button {
+    display: none; 
+    background: none;
+    border: none;
+    color: var(--light-text);
+    font-size: 2em; /* Larger icon */
+    cursor: pointer;
+    line-height: 0;
+    padding: 8px;
+    z-index: 1010;
+}
+
+/* Hide desktop CTA button on mobile */
+@media (max-width: 768px) {
+    .header-cta {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Revert container padding */
+    .container {
+        padding: 0 16px;
+    }
+
+    .main-header .container {
+        justify-content: space-between;
+    }
+
+    /* Navigation (The drop-down content) */
+    nav {
+        display: block;
+        position: absolute;
+        top: 54px; /* Adjust for thicker header */
+        left: 0;
+        width: 100%;
+        background: var(--secondary-bg);
+        border-top: 1px solid var(--dark-border);
+        flex-direction: column;
+        height: 0; 
+        overflow: hidden;
+        transition: height 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Custom spring transition */
+    }
+    
+    /* State toggled by JavaScript */
+    nav.nav-open {
+        height: 250px; /* Increased height for more padding */
+        padding: 10px 0;
+    }
+
+    nav a {
+        display: block; 
+        padding: 12px 16px;
+        margin: 0;
+        text-align: left;
+        color: var(--light-text); 
+        border-bottom: 1px solid var(--dark-border);
+    }
+
+    nav a:last-child {
+        border-bottom: none;
+    }
+
+    .menu-toggle-button {
+        display: block; 
+    }
+
+    /* Force grids to stack on mobile */
+    .service-grid, .project-grid, .pricing-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .service-item, .project-item, .price-card {
+        margin: 0 0px; 
+    }
+    
+    /* Modal responsiveness */
+    .modal-content {
+        margin: 10% auto; 
+        width: 95%;
+        padding: 20px;
+    }
+    /* Stacking for testimonial cards in modal on mobile */
+    .modal-body .project-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .testimonial-card .quote::before {
+        font-size: 2.5em;
+    }
+}
